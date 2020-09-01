@@ -80,7 +80,7 @@ class Busqueda : public Misc
     {
         int j = 5;
         int a = 0;
-        int count = 0;
+
         while (a < j)
         {
             
@@ -89,17 +89,17 @@ class Busqueda : public Misc
             int middle;
             char key = 'F';
             
-            while (count == 0)
+            while(left <= right)
             {
-                
-                if (right >= left){middle = left + (right-left)/2;}
-                
-                if (elementos[middle] == numeros[a]){std::cout << "Busqueda Binaria: " << "The index of: " << numeros[a] << " is " << middle << std::endl; a++; count++;}
-                else if(elementos[middle] > numeros[a]){right = middle-1;}
-                else if(elementos[middle] < numeros[a]){left = middle+1;}
-                else{std::cout << "Busqueda Binaria: " << "The index of: " << numeros[a] << " is " << "-1" << std::endl; a++; count++;}
-                
-            }    
+                middle = (left+right)/2;
+                if(elementos[middle] == numeros[a]){key = 'V'; break;}
+                if(elementos[middle] > numeros[a]){right = middle-1; middle = (left+right)/2;}
+                if(elementos[middle] < numeros[a]){left = middle+1; middle = (left+right)/2;}
+            }
+
+            if (key == 'V'){std::cout << "Busqueda Binaria: " << "The index of: " <<  numeros[a] << " is " << middle << std::endl;}
+            else{std::cout << "Busqueda Binaria: " << "The index of: " <<  numeros[a] << " is " << "-1" << std::endl;}
+            a++;    
         }
     }
 
