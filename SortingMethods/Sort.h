@@ -86,8 +86,8 @@ void insertionSort(std::vector<double> elementos)
         
 }  
 
-void mergeSort(std::vector<double> elementos, int l, int r) {
-   int m;
+void mergeSort(std::vector<double> &elementos, int l, int r) {
+   int m,p;
    if(l < r) {
       int m = l+(r-l)/2;
       
@@ -95,8 +95,5 @@ void mergeSort(std::vector<double> elementos, int l, int r) {
       mergeSort(elementos, m+1, r);
       merge(elementos, l, m, r);
    }
-
-   
 }
-
 };    

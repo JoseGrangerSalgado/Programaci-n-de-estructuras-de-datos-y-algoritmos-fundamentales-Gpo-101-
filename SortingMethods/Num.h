@@ -34,35 +34,55 @@ void swap(double *a, double *b)
 
 }
 
-void merge(std::vector<double> elementos, int l, int m, int r) {
-   int i, j, k, nl, nr;
-   
-   nl = m-l+1; nr = r-m;
-   int lelementos[nl], relementos[nr];
-   
-   for(i = 0; i<nl; i++)
-      lelementos[i] = elementos[l+i];
-   for(j = 0; j<nr; j++)
-      relementos[j] = elementos[m+1+j];
-   i = 0; j = 0; k = l;
-  
-   while(i < nl && j<nr) {
-      if(lelementos[i] <= relementos[j]) {
-         elementos[k] = elementos[i];
-         i++;
-      }else{
-         elementos[k] = elementos[j];
-         j++;
-      }
-      k++;
-   }
-   while(i<nl) {       
-      elementos[k] = lelementos[i];
-      i++; k++;
-   }
-   while(j<nr) {     
-      elementos[k] = relementos[j];
-      j++; k++;
-   }
-}
-};
+void merge(std::vector<double> &elementos, int left, int middle, int right)
+    {
+        int i, j, k;
+        int num1 = middle - left + 1;
+        int num2 = right - middle;
+
+        std::vector<int> izq;
+        std::vector<int> der;
+
+        for (i = 0; i < num1; i++)
+        {
+            izq.push_back(elementos[left + i]);
+        }
+        for (j = 0; j < num2; j++)
+        {
+            der.push_back(elementos[middle + 1 + j]);
+        }
+
+        i = 0;
+        j = 0;
+        k = left;
+
+        while(i < num1 && j < num2)
+        {
+            if(izq[i] <= der[j])
+            {
+                elementos[k] = izq[i];
+                i++;
+            }
+            else
+            {
+                elementos[k] = der[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i < num1)
+        {
+            elementos[k] = izq[i];
+            i++;
+            k++;
+        }
+
+        while(j < num2)
+        {
+            elementos[k] = der[j];
+            j++;
+            k++;
+        }
+    }
+    };

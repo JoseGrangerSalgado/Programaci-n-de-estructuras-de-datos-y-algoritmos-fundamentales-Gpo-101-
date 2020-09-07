@@ -16,8 +16,7 @@ for(p=0; p < sort1.elementos.size(); p++)
 
 std::cout << std::endl << "Sorters: " << std::endl;
 
-
-std::cout << "Sorting by Selection Sort " << std::endl;
+/*std::cout << "Sorting by Selection Sort " << std::endl;
 DECLARE_TIMING(t);
 START_TIMING(t);
 sort1.selectionSort(sort1.elementos);
@@ -35,12 +34,19 @@ START_TIMING(t3);
 sort1.insertionSort(sort1.elementos);
 STOP_TIMING(t3);
 SHOW_TIMING(t3, "Insertion Sort:");
-std::cout << std::endl << "Sorting by Merge Sort " << std::endl;
+std::cout << std::endl << "Sorting by Merge Sort " << std::endl;*/
+
+int k = 0;
+
+while(k<9){
+
 DECLARE_TIMING(t4);
 START_TIMING(t4);
 sort1.mergeSort(sort1.elementos,0,sort1.elementos.size()-1);
 STOP_TIMING(t4);
 SHOW_TIMING(t4, "Merge Sort:");
+k++;
+}
 
 
 
