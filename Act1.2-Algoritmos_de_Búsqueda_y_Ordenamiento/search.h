@@ -9,10 +9,10 @@ public:
 
  void busquedaSecuencial(std::vector<int> elementos,std::vector<int> numeros)
     {
-        int j = 5;
+        
         int a = 0;
 
-        while (a < j)
+        while (a < numeros.size())
         {
             int i = 0;
             char band = 'F';
@@ -41,10 +41,10 @@ else if (met == "q"){Sort::quickSort(elementos,0,elementos.size());}
 
 
 
-int j = 5;
+
  int a = 0;
 
-        while (a < j)
+        while (a < numeros.size())
         {
             
             int left = 0;
