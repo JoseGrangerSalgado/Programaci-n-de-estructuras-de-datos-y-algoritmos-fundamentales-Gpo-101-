@@ -1,5 +1,6 @@
 #include "Misc.h"
 
+
 class Busqueda : public Misc
 {
 
@@ -78,6 +79,7 @@ class Busqueda : public Misc
      
     void busquedaBinaria(std::vector<double> elementos,std::vector<double> numeros)
     {
+        std::sort(elementos.begin(), elementos.end());
         int j = 5;
         int a = 0;
 
@@ -103,7 +105,63 @@ class Busqueda : public Misc
         }
     }
 
+
+void busquedaBinaria1(std::vector<double> elementos,std::vector<double> numeros)
+{
+
+std::string met;
+std::cout << "Para poder hacer la busqueda Binaria, se necesita ordenar el arreglo, porfavor seleciona el metodo que prefieres: " << std::endl;
+std::cout << "Para usar el metodo de insertion ponga i, para usar el metodo de Burbuja, ponga b, y finalmente para usar el metodo Quick, ponga q: " << std::endl;
+
+/*if (met == "i"){Sort::insertionSort(elementos);}
+else if (met == "b"){Sort::bubbleSort(elementos);}
+else if (met == "q"){Sort::quickSort(elementos,0,elementos.size());}
+else{throw "Invalid input";}*/
+
+std::sort(elementos.begin(), elementos.end());
+
+
+int i,n,j;
+int prim = 0;
+int ult = elementos.size()-1;
+int med = (prim+ult)/2;
+
+while (j < numeros.size()-1)
+{
+while (prim<=ult)
+{
+    if(elementos[med] < numeros[j])
+    {
+        prim = med+1;
+    }
+    else if (elementos[med] == numeros[j])
+    {
+        std::cout << "Posicion: " << med+1;
+        j++;
+        break;
+
+
+    }
+    else
+    {
+        ult = med - 1;
+    }
+
+    med = (prim+ult)/2;
+
+    if (prim>ult)
+    {
+
+        std::cout << "-1";
+        j++;
+
+    }  
+}
+
+}
+
+
+}
+
 };
-
-
 

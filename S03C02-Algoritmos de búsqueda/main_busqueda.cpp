@@ -11,6 +11,7 @@ busqueda1.setNum();
 busqueda1.busquedaSecuencial(busqueda1.elementos,busqueda1.numeros);
 busqueda1.busquedaSecuencialOrdenada1(busqueda1.elementos,busqueda1.numeros);
 busqueda1.busquedaBinaria(busqueda1.elementos,busqueda1.numeros);
+busqueda1.busquedaBinaria1(busqueda1.elementos,busqueda1.numeros);
 
 
 
