@@ -204,7 +204,7 @@ public:
          
     };
 
-    void reverse()
+    void reverse() //O(n)
     {
 
         Node<T> *ptr = head;
@@ -243,37 +243,9 @@ public:
                 ptr = next;
                 next = next->get_next();
             }
-
         }
-        
-    
-            
-
-        
-
-         
     };
-
-  
-   
-
-
-    /*int RemoveDuplicates() // O(N)
-    {
-        int count = 0;
-        Node<T> *ptr = head;
-        while (ptr != NULL)
-        {
-            if (ptr->get_val() == searchfor)
-                count++;
-            ptr = ptr->get_next();
-        } 
-        head = NULL;
-    };*/
-
-
 };
-
 #endif
 
 
